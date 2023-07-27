@@ -1,7 +1,6 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light navbar-default">
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
     <a class="navbar-brand" href="#">Recipe Book</a>
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-        aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -13,14 +12,17 @@
                 <a class="nav-link" href="#" (click)="onSelect('shopping-list')">Shopping List</a>
             </li>
         </ul>
-        <ul class="nav navbar-nav nav-right">
-            <li class="dropdown nav-item">
-                <a class="nav-link dropdown-toggle" role="button" href="#">Manage <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Save Data</a></li>
-                    <li><a href="#">Fetch Data</a></li>
+        <ul class="dropdown-menu" appDropdown>
+            <div >
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <ul >
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
-            </li>
+              </div>
         </ul>
     </div>
 </nav>
