@@ -1,25 +1,17 @@
-<div class="row">
-    <div class="col-12">
-        <img src="{{ currentRecipe.imagePath }}" alt="{{ currentRecipe.name }}" class="img-fluid" style="max-height: 500px;">
+<div class="container border border-1 border">
+    <div class="row mt-5 ">
+        <div class="col-12">
+            <img src="{{ currentRecipe.imagePath }}" alt="{{ currentRecipe.name }}" class="img-fluid" style="max-height: 500px;">
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        <h1>{{ currentRecipe.name }}</h1>
-    </div>
-</div>
-<div class="col">
     <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item"><a (click)="onToShoppingList()" style="cursor: pointer;">To Shopping List</a></li>
-                <li class="list-group-item"><a href="#">Edit Recipe</a></li>
-                <li class="list-group-item"><a href="#">Delete Recipe</a></li>
-            </ul>
+        <div class="col-12">
+            <h1>{{ currentRecipe.name }}</h1>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        {{ currentRecipe.description }}
+    <div class="row">
+        <div class="col-12">
+            {{ currentRecipe.description }}
     </div>
 </div>
 <div class="row">
@@ -28,4 +20,14 @@
             <li class="list-group-item" *ngFor="let ingredient of currentRecipe.ingredients">{{ ingredient.name }} - {{ ingredient.amount }}</li>
         </ul>
     </div>
+</div>
+<div class="col">
+    <div class="row">
+        <div class="col-12p">
+            <a class="btn btn-success m-1" (click)="onToShoppingList()" style="cursor: pointer;">To Shopping List</a>
+            <a class="btn btn-warning m-1" (click)="onEditRecipe()"  style="cursor: pointer;">Edit Recipe</a>
+            <a class="btn btn-danger m-1" style="cursor: pointer;">Delete Recipe</a>
+        </div>
+    </div>
+</div>
 </div>
