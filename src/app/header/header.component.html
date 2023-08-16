@@ -5,17 +5,25 @@
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" routerLink="/recipes" >Recipes</a>
+            <li class="nav-item" routerLinkActive="active" *ngIf="isAuthenticated">
+                <a class="nav-link" routerLink="/recipes">Recipes</a>
             </li>
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" routerLink="/shopping-list">Shopping List</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" style="cursor: pointer;" (click)="onSaveData()">Save Data</a>
+            <li class="nav-item" routerLinkActive="active"  *ngIf="!isAuthenticated">
+                <a class="nav-link" routerLink="/auth">Authenticate</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a>
+            <li class="nav-item" *ngIf="isAuthenticated">
+                <a class="nav-link" style="cursor: pointer;" (click)="onSaveData()" >Save Data</a>
+            </li>
+            <li class="nav-item" *ngIf="isAuthenticated">
+                <a class="nav-link" style="cursor: pointer;" (click)="onFetchData()" >Fetch Data</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-end ms-auto" style="margin-right:10px;">
+            <li class="nav-item" *ngIf="isAuthenticated">
+                <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
             </li>
         </ul>
     </div>
