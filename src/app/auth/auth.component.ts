@@ -13,14 +13,12 @@ export class AuthComponent {
     isLoginMode = true;
     isLoading = false;
     error: string = null;
-
+ 
     constructor(private authService: AuthService, private router: Router) { }
 
     onSwitchMode() {
         this.isLoginMode = !this.isLoginMode;
     }
-
-    
 
     onSubmit(form: NgForm) {
         if (!form.valid) {
@@ -50,5 +48,9 @@ export class AuthComponent {
 
         form.reset();
         
+    }
+
+    onHandleError() {
+        this.error = null;
     }
 }
